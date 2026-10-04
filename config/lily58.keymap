@@ -31,6 +31,20 @@
             #binding-cells = <0>;
             bindings = <&kp V>, <&kp LC(V)>;
         };
+
+        layer_change_2: layer_change_2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LAYER_CHANGE_2";
+            #binding-cells = <0>;
+            bindings = <&mo 2>, <&to 2>;
+        };
+
+        especialN: especialN {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ESPECIALN";
+            #binding-cells = <0>;
+            bindings = <&kp N>, <&kp RA(N)>;
+        };
     };
 
     keymap {
@@ -46,11 +60,11 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC         &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                                 &kp N6  &kp N7    &kp N8     &kp N9   &kp N0    &kp BACKSPACE
-&kp TAB         &kp Q   &kp W   &kp E     &kp R     &kp T                                  &kp Y   &kp U     &kp I      &kp O    &kp P     &kp MINUS
-&kp LEFT_SHIFT  &kp A   &kp S   &kp D     &kp F     &kp G                                  &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL       &kp Z   &kp X   &kp C     &kp V     &lt 3 B        &kp LBKT     &kp RBKT   &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
-                                &kp LALT  &kp LGUI  &layerChange1  &kp SPACE    &kp SPACE  &mo 2   &kp BSPC  &kp RGUI
+&kp ESC         &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                                 &kp N6           &kp N7    &kp N8     &kp N9   &kp N0    &kp BACKSPACE
+&kp TAB         &kp Q   &kp W   &kp E     &kp R     &kp T                                  &kp Y            &kp U     &kp I      &kp O    &kp P     &kp MINUS
+&kp LEFT_SHIFT  &kp A   &kp S   &kp D     &kp F     &kp G                                  &kp H            &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LCTRL       &kp Z   &kp X   &ctrlC    &ctrlV    &lt 3 B        &kp LBKT     &kp RBKT   &kp N            &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
+                                &kp LALT  &kp LGUI  &layerChange1  &kp SPACE    &kp SPACE  &layer_change_2  &kp BSPC  &kp RGUI
             >;
         };
 
@@ -68,7 +82,7 @@
 &kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                          &trans        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans    &trans
 &kp F7      &kp F8        &kp F9        &kp F10       &kp F11       &kp F12                         &trans        &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp RPAR  &kp TILDE
 &trans      &trans        &trans        &trans        &trans        &trans        &trans    &trans  &kp NUMBER_0  &kp NUMBER_7  &kp N8        &kp N9        &kp RBRC  &kp PIPE
-                                        &trans        &trans        &trans        &trans    &trans  &trans        &trans        &trans
+                                        &trans        &trans        &to 0         &trans    &trans  &to 0         &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -88,7 +102,7 @@
 &kp GRAVE  &trans  &trans    &kp UP_ARROW    &trans     &trans                     &trans       &trans     &kp UP_ARROW  &trans    &trans    &trans
 &kp F1     &kp F2  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &kp F6                     &trans       &kp LEFT   &kp DOWN      &kp UP    &trans    &trans
 &kp F7     &kp F8  &kp F9    &kp F10         &kp F11    &kp F12  &trans    &trans  &kp KP_PLUS  &kp MINUS  &kp EQUAL     &kp LBKT  &kp RBKT  &kp BSLH
-                             &trans          &trans     &trans   &trans    &trans  &trans       &trans     &trans
+                             &trans          &trans     &to 0    &trans    &trans  &to 0        &trans     &trans
             >;
         };
 
