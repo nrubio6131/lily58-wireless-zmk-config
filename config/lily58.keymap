@@ -17,6 +17,20 @@
             #binding-cells = <0>;
             bindings = <&mo 1>, <&to 1>;
         };
+
+        ctrlC: ctrlC {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CTRLC";
+            #binding-cells = <0>;
+            bindings = <&kp C>, <&kp LC(C)>;
+        };
+
+        ctrlV: ctrlV {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CTRLV";
+            #binding-cells = <0>;
+            bindings = <&kp V>, <&kp LC(V)>;
+        };
     };
 
     keymap {
