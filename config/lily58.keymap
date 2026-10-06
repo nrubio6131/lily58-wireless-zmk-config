@@ -57,7 +57,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "CTRLX";
             #binding-cells = <0>;
-            bindings = <&kp Z>, <&kp LC(Z)>;
+            bindings = <&kp X>, <&kp LC(X)>;
         };
     };
 
