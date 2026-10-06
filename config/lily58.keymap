@@ -59,34 +59,6 @@
             #binding-cells = <0>;
             bindings = <&kp Z>, <&kp LC(Z)>;
         };
-
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NEW_BEHAVIOR";
-            #binding-cells = <0>;
-            bindings = <&kp Z>, <&kp LC(Z)>;
-        };
-
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NEW_BEHAVIOR";
-            #binding-cells = <0>;
-            bindings = <&kp Z>, <&kp LC(Z)>;
-        };
-
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NEW_BEHAVIOR";
-            #binding-cells = <0>;
-            bindings = <&kp Z>, <&kp LC(Z)>;
-        };
-
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NEW_BEHAVIOR";
-            #binding-cells = <0>;
-            bindings = <&kp X>, <&kp LC(X)>;
-        };
     };
 
     keymap {
