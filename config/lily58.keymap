@@ -45,6 +45,20 @@
             #binding-cells = <0>;
             bindings = <&kp N>, <&kp RA(N)>;
         };
+
+        ctrlz: ctrlz {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CTRLZ";
+            #binding-cells = <0>;
+            bindings = <&kp Z>, <&kp LC(Z)>;
+        };
+
+        ctrlx: ctrlx {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CTRLX";
+            #binding-cells = <0>;
+            bindings = <&kp Z>, <&kp LC(Z)>;
+        };
     };
 
     keymap {
@@ -63,7 +77,7 @@
 &kp ESC         &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                                 &kp N6           &kp N7     &kp N8     &kp N9   &kp N0    &kp BACKSPACE
 &kp TAB         &kp Q   &kp W   &kp E     &kp R     &kp T                                  &kp Y            &kp U      &kp I      &kp O    &kp P     &kp MINUS
 &kp LEFT_SHIFT  &kp A   &kp S   &kp D     &kp F     &kp G                                  &kp H            &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL       &kp Z   &kp X   &ctrlC    &ctrlV    &lt 3 B        &kp LBKT     &kp RBKT   &especialN       &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
+&kp LCTRL       &ctrlz  &ctrlx  &ctrlC    &ctrlV    &lt 3 B        &kp LBKT     &kp RBKT   &especialN       &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
                                 &kp LALT  &kp LGUI  &layerChange1  &kp SPACE    &kp SPACE  &layer_change_2  &kp RSHFT  &kp DEL
             >;
         };
@@ -78,11 +92,11 @@
 
             display-name = "Lower";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3  &bt BT_SEL 4                    &trans        &trans        &trans        &trans        &trans    &trans
-&kp F1      &kp F2        &kp F3        &kp F4         &kp F5        &kp F6                          &trans        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans    &trans
-&kp F7      &kp F8        &kp F9        &kp F10        &kp F11       &kp F12                         &trans        &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp RPAR  &kp TILDE
-&trans      &trans        &trans        &trans         &trans        &trans        &trans    &trans  &kp NUMBER_0  &kp NUMBER_7  &kp N8        &kp N9        &kp RBRC  &kp PIPE
-                                        &kp RIGHT_ALT  &trans        &to 0         &trans    &trans  &to 0         &trans        &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3  &bt BT_SEL 4                       &trans        &trans        &trans        &trans        &kp MINUS  &kp EQUAL
+&kp F1      &kp F2        &kp F3        &kp F4         &kp F5        &kp F6                             &trans        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans     &kp PLUS
+&kp F7      &kp F8        &kp F9        &kp F10        &kp F11       &kp F12                            &trans        &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp RPAR   &kp TILDE
+&trans      &trans        &trans        &trans         &trans        &trans        &trans       &trans  &kp NUMBER_0  &kp NUMBER_7  &kp N8        &kp N9        &kp RBRC   &kp PIPE
+                                        &kp RIGHT_ALT  &trans        &to 0         &kp ENTER    &trans  &to 0         &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -106,7 +120,7 @@
             >;
         };
 
-        layer_6 {
+        mouse {
             bindings = <
 &trans  &trans  &trans          &trans          &trans           &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &trans                    &trans  &trans  &trans  &trans  &trans  &trans
